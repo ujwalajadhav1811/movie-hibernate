@@ -18,14 +18,14 @@
         <property name="hibernate.connection.password"></property>
          
         <!-- Hibernate Properties -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
         <property name="hibernate.dialect">
             org.hibernate.dialect.MySQLDialect
         </property>
          <property name="show_sql">true</property>
          
         <!-- Resource Mapping -->
-        <mapping class="com.techdenovo.model.Movie"/>
+        <mapping class="com.techdenovo.model.User"/>
          
     </session-factory>
 </hibernate-configuration>

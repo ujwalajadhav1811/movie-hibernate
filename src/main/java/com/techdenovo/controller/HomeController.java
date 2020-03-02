@@ -19,7 +19,7 @@ public class HomeController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("new-movie.jsp").forward(request, response);
+		request.getRequestDispatcher("login-user.jsp").forward(request, response);
 	}
 
 	

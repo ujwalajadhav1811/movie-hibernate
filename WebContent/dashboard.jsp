@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- please enter valid username and password
+	<h1>DASHBOARD</h1>
 </body>
 </html>
