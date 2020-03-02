@@ -49,7 +49,9 @@
 	                        </td>
 	                        
 	                        <td>
-	                     <a href="EditServlet?id=${movie.id}">edit</a></td>
+			                     <a href="EditServlet?id=${movie.id}">edit</a>
+			                     <a href="DeleteServlet?id=${movie.id}">Delete</a>
+	                     	</td>
 	   			
 	                         
 	                     </tr>

@@ -38,6 +38,24 @@ public class MovieDaoImpl implements MovieDao
 		 session.close();
 		return movie;
 		 
-		 
+	 }
+	 
+	 public void movieUpdate(Movie movie )
+	 {
+		 Session session = this.sessionFactory.openSession();
+			Transaction tx=  session.beginTransaction();
+			 session.update(movie);
+			tx.commit();
+			session.close();
+			
+	 }
+	 
+	 public void movieDelete(Movie movie)
+	 {
+		 Session session = this.sessionFactory.openSession();
+			Transaction tx=  session.beginTransaction();
+			 session.delete(movie);
+			tx.commit();
+			session.close(); 
 	 }
 }

@@ -12,7 +12,7 @@
 <body>
 
 <div class="container">
-<form action="EditServlet" method="post">
+<form action="DeleteServlet" method="post">
 	<%@ include file="menu.jsp" %>
 	
 	<div class="row">	
@@ -48,14 +48,11 @@
 		  </div>
 		  </br>
 		  <div>
-		  <button type="submit" class="btn btn-primary">Submit</button>
+		  <button type="submit" class="btn btn-primary">Delete</button>
 		  </div>
 		  </div>
 		  </div>
-		  </br>
-		  <div>
-		  <button type="submit" class="btn btn-primary">Cancel</button>
-		  </div>
+		  
 </form>
 	  </div>  
 	</div>        

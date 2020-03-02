@@ -14,12 +14,12 @@ import com.techdenovo.DAO.MovieDaoImpl;
 import com.techdenovo.model.Movie;
 
 
-@WebServlet("/EditServlet")
-public class EditServlet extends HttpServlet {
+@WebServlet("/DeleteServlet")
+public class DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
-    public EditServlet() {
+    public DeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,13 +33,13 @@ public class EditServlet extends HttpServlet {
 		Movie movie=mdao.findMovieById(id);
 		request.setAttribute("movie", movie);
 		System.out.println("inside doget "+movie);
-		RequestDispatcher dispatcher=request.getRequestDispatcher("edit-movie.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("delete-movie.jsp");
 		dispatcher.forward(request, response);
-		}
+	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 		//doGet(request, response);
 		int id=Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
@@ -51,9 +51,8 @@ public class EditServlet extends HttpServlet {
 		movie.setDescription(description);
 		movie.setStatus(status);
 		MovieDao mdao = new MovieDaoImpl() ;
-		mdao.movieUpdate(movie);
+		mdao.movieDelete(movie);
 		response.sendRedirect("success.jsp");
-	
 	}
 
 }

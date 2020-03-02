@@ -9,7 +9,8 @@ public interface MovieDao
 	public int addMovie(Movie movie);
 	 public List<Movie> getAllMovies();
 	 public  Movie findMovieById(int id); 
-		
+	 public void movieUpdate(Movie movie );
+	 public void movieDelete(Movie movie);
 
 	}
 
