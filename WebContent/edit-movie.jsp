@@ -12,39 +12,49 @@
 <body>
 
 <div class="container">
+<form action="EditServlet" method="post">
 	<%@ include file="menu.jsp" %>
 	
 	<div class="row">	
 	     <div class="container">
 	     
-	   <form action="AddMovie" method="post">
-  
+	   
+  			<div class="form-group-row">
+		    <label for="exampleInputname">Id</label>
+		    <div class="col-sm-10">
+		    <input type="text" name="id" class="form-control" id="exampleInputname" value="${movie.id}" disabled>
+		  </div>
+		  </div>
 		  
-		  
-		  
+	
 		  <div class="form-group-row">
 		    <label for="exampleInputname">Name</label>
 		    <div class="col-sm-10">
-		    <input type="text" name="name" class="form-control" id="exampleInputname">
+		    <input type="text" name="name" class="form-control" id="exampleInputname" value="${movie.name}">
 		  </div>
 		  </div>
 		  
 		  <div class="form-group-row">
 		    <label for="exampleInputstatus">Description</label>
 		    <div class="col-sm-10">
-		    <input type="text" name="description" class="form-control" id="exampleInputstatus">
+		    <input type="text" name="description" class="form-control" id="exampleInputstatus" value="${movie.description}">
 		  </div>
 		  </div>
 		  <div class="form-group-row">
 		    <label for="exampleInputdescription">Status</label>
 		    <div class="col-sm-10">
-		    <input type="text" name="status" class="form-control" id="exampleInputdescription">
+		    <input type="text" name="status" class="form-control" id="exampleInputdescription" value="${movie.status}">
 		  </div>
 		  </div>
-		  </br>
 		  </br>
 		  <div>
 		  <button type="submit" class="btn btn-primary">Submit</button>
+		  </div>
+		  </div>
+		  </div>
+		  </br>
+		  <div>
+		  <button type="submit" class="btn btn-primary">Cancel</button>
 		  </div>
 </form>
 	  </div>  

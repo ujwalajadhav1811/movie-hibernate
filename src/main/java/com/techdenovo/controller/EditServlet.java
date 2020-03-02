@@ -1,7 +1,6 @@
 package com.techdenovo.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,12 +14,12 @@ import com.techdenovo.DAO.MovieDaoImpl;
 import com.techdenovo.model.Movie;
 
 
-@WebServlet("/ListServlet")
-public class ListServlet extends HttpServlet {
+@WebServlet("/EditServlet")
+public class EditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   
-    public ListServlet() {
+    
+    public EditServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,21 +28,22 @@ public class ListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		MovieDao mdDao=new MovieDaoImpl();
-		List<Movie> movies = mdDao.getAllMovies();
-		System.out.println(movies);
-		if (!movies.isEmpty()) {
-			request.setAttribute("listMovie", movies);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("list-movie.jsp");
-			dispatcher.forward(request, response);
-		}else {
-			response.sendRedirect("error.jsp");
+		int id=Integer.parseInt(request.getParameter("id"));
+		MovieDao mdao=new MovieDaoImpl();
+		Movie movie=mdao.findMovieById(id);
+		request.setAttribute("movie", movie);
+		System.out.println("inside doget "+movie);
+		RequestDispatcher dispatcher=request.getRequestDispatcher("edit-movie.jsp");
+		dispatcher.forward(request, response);
 		}
-	}
+
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		//doGet(request, response);
+		
+		
+		
 	}
 
 }

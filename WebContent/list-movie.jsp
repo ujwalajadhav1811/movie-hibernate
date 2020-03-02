@@ -24,7 +24,9 @@
 	                     <th>Description</th>
 	                     <th>Status</th>
 	                     <th>Actions</th>
-	                 </tr>
+	                     
+	   		
+	                 
 	             </thead>
 	             <tbody>
 	              
@@ -43,7 +45,12 @@
 	                         </td>
 	                         <td>
 	                             <c:out value="${movie.status}" />
-	                         </td>
+	                             
+	                        </td>
+	                        
+	                        <td>
+	                     <a href="EditServlet?id=${movie.id}">edit</a></td>
+	   			
 	                         
 	                     </tr>
 	                 </c:forEach>

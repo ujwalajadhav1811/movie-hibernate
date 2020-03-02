@@ -24,10 +24,20 @@ public class MovieDaoImpl implements MovieDao
 	
 	 public List<Movie> getAllMovies()
 	 {
-		 Session session = this.sessionFactory.openSession();
-		 session.createCriteria(Movie.class).list();
-		return null;
+		 Session session = sessionFactory.openSession();
+	List<Movie> movieList=	 session.createCriteria(Movie.class).list();
+	session.close();
+		return movieList;
 		 
 	 }
-
+	 
+	 public Movie findMovieById(int id)
+	 {
+		 Session session = this.sessionFactory.openSession(); 
+		 Movie movie=	 (Movie) session.get(Movie.class, id);
+		 session.close();
+		return movie;
+		 
+		 
+	 }
 }

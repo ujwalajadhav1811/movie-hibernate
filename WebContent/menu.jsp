@@ -17,7 +17,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
        
-          <a class="dropdown-item" href="<%=request.getContextPath()%>/movie">movie list</a>
+          <a class="dropdown-item" href="<%=request.getContextPath()%>/ListServlet">movie list</a>
           <a class="dropdown-item" href="<%=request.getContextPath()%>/movie?action=insert">Add New</a>
           
         </div>  

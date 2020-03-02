@@ -8,4 +8,8 @@ public interface MovieDao
 {
 	public int addMovie(Movie movie);
 	 public List<Movie> getAllMovies();
-}
+	 public  Movie findMovieById(int id); 
+		
+
+	}
+
