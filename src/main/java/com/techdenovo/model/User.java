@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class User
 {	@Id
 	private int id;
-	@Column(name="unique")
+	@Column
 	private String username;
 	@Column
 	private String password;

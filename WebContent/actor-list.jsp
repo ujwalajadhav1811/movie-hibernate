@@ -7,8 +7,8 @@
 	
 	<div class="row">	
 	     <div class="container">
-	     <form action="/ListServlet" method="get">
-	         <h3 class="text-center">List of Movies</h3>
+	     <form action="ActorList" method="get">
+	         <h3 class="text-center">List of Actors</h3>
 	         <hr>
 	         <div class="container text-left">
 	
@@ -21,8 +21,8 @@
 	                 <tr>
 	                     <th>ID</th>
 	                     <th>Name</th>
-	                     <th>Description</th>
-	                     <th>Status</th>
+	                     <th>Address</th>
+	                    
 	                     <th>Actions</th>
 	                     
 	   		
@@ -31,26 +31,23 @@
 	             <tbody>
 	              
 	                 
-	                 <c:forEach var="movie" items="${listMovie}">
+	                 <c:forEach var="actor" items="${actorList}">
 	
 	                     <tr>
 	                         <td>
-	                             <c:out value="${movie.id}" />
+	                             <c:out value="${actor.id}" />
 	                         </td>
 	                         <td>
-	                             <c:out value="${movie.name}" />
+	                             <c:out value="${actor.name}" />
 	                         </td>
 	                         <td>
-	                             <c:out value="${movie.description}" />
+	                             <c:out value="${actor.address}" />
 	                         </td>
-	                         <td>
-	                             <c:out value="${movie.status}" />
-	                             
-	                        </td>
+	                         
 	                        
 	                        <td>
-			                     <a href="EditServlet?id=${movie.id}">edit</a>
-			                     <a href="DeleteServlet?id=${movie.id}">Delete</a>
+			                     <a href="EditServlet?id=${actor.id}">edit</a>
+			                     <a href="DeleteServlet?id=${actor.id}">Delete</a>
 	                     	</td>
 	   			
 	                         

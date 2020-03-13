@@ -7,20 +7,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.techdenovo.DAO.MovieDao;
-import com.techdenovo.DAO.MovieDaoImpl;
-import com.techdenovo.model.Movie;
+import com.techdenovo.DAO.ActorDao;
+import com.techdenovo.DAO.ActorDaoImpl;
+import com.techdenovo.model.Actor;
 
-@WebServlet("/AddMovie")
-public class AddMovieServlet extends HttpServlet {
+
+@WebServlet("/AddActor")
+public class AddActorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
-    public AddMovieServlet() {
+    public AddActorServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -28,25 +30,24 @@ public class AddMovieServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//doGet(request, response);
+		String name=request.getParameter("name");
+		String address=request.getParameter("address");
 		
-		String name = request.getParameter("name");
-		String description = request.getParameter("description");
-		String status = request.getParameter("status");
-		
-		if(!(name.isEmpty()) || !(description.isEmpty()) || !(status.isEmpty())) {
-			Movie movie= new Movie();
-			movie.setName(name);
-			movie.setDescription(description);
-			movie.setStatus(status);
-			MovieDao mdao = new MovieDaoImpl() ;
-			  
-			int r=mdao.addMovie(movie); 
-			if(r!=0) {
+		if (!(name.isEmpty()) || !(address.isEmpty())) 
+		{
+			Actor actor=new Actor();
+			actor.setName(name);
+			actor.setAddress(address);
+			ActorDao actorDao=new ActorDaoImpl();
+			
+			int r=actorDao.addActor(actor);
+			if (r!=0)
+			{
 				response.sendRedirect("success.jsp");
 			}
-			
-			
+			}
 	}
 
-	}
 }
